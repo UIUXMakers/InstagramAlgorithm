@@ -169,10 +169,10 @@ if analyze_button and username.strip():
                     likes = post.likes if post.likes is not None else 'N/A'
                     comm = post.comments if post.comments is not None else 'N/A'
 
-                    with st.expander(f"🎥 Reel #{reel_number}  ({post.shortcode})", expanded=(reel_number <= 3)):
+                    with st.expander(f"🎥 Reel #{reel_number} ({post.shortcode})", expanded=(reel_number <= 3)):
                         col1, col2 = st.columns([1, 2])
                         with col1:
-                            st.image(post.url, width=300, caption="Reel Preview")  # FIXED: width instead of use_column_width
+                            st.image(post.url, width=300, caption="Reel Preview")  # FIXED HERE
                         with col2:
                             st.markdown(f"**Upload time:** {format_time(post.date_local.astimezone(IST) if post.date_local else None)}")
                             col_likes, col_comm = st.columns(2)
